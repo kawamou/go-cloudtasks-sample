@@ -1,0 +1,12 @@
+queue:
+  - name: first-queue
+    bucket_size: 50
+    rate: 0.5/s
+    target: worker
+    max_concurrent_requests: 2
+    retry_parameters:
+      task_retry_limit: 0
+      task_age_limit: 1s
+      min_backoff_seconds: 2
+      max_backoff_seconds: 3600
+      max_doublings: 16
